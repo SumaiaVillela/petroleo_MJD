@@ -24,11 +24,11 @@
             <!-- Formulários -->
             <div class="input-container">        
             <!-- Resultado gerado dinamicamente -->
-                {% for item in resultado_lista %}
+                {% for item in resultado %}
                     <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
                         <p>{{ item.tem_derivado }}</p><br>
                         <p>{{ item.explicacao }}</p><br><br>
-                    {% endfor %}
+                {% endfor %}
             <!-- Mensagem de erro -->
                 <br><p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmaill.com.</p>
             </div>

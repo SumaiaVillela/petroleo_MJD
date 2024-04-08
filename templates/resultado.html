@@ -22,17 +22,10 @@
             </div>
         
             <!-- Formulários -->
-            <div class="input-container">        
-            <!-- Resultado gerado dinamicamente -->
-                {% if resultado is iterable %}
-                    {% for item in resultado %}
-                    <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
-                        <p>{{ item.tem_derivado }}</p><br>
-                        <p>{{ item.explicacao }}</p><br><br>
-                    {% endfor %}
-                {% else %}
-                    <h2>{{ resultado }}</h2><br><br>
-                {% endif %}
+            <div class="input-container">   
+
+                <p>{{ resultado }}</p><br><br>
+
             <!-- Mensagem de erro -->
                 <p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmaill.com.</p>
             </div>

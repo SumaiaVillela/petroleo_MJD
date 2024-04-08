@@ -41,7 +41,10 @@ def home():
 
             resultado = analisa_imagem(image_path)
 
-            return render_template('resultado.html', resultado = resultado)
+            if isinstance(resultado, list):
+                 return render_template('resultado_lista.html', resultado = resultado)
+            elif isinstance(resultado, str):
+                return render_template('resultado.html', resultado = resultado)
             
         elif 'texto' in request.form:
             # Processar texto
@@ -49,15 +52,18 @@ def home():
 
             resultado = analisa_texto(input)
 
-            return render_template('resultado.html', resultado = resultado)
+            if isinstance(resultado, list):
+                 return render_template('resultado_lista.html', resultado = resultado)
+            elif isinstance(resultado, str):
+                return render_template('resultado.html', resultado = resultado)
         
         elif 'substance' in request.form:
             # Se o formulário submetido for o dropdown
             termo_selecionado = request.form['substance']
 
-            resultado_lista = compara_lista(termo_selecionado)
+            resultado = compara_lista(termo_selecionado)
 
-            return render_template('resultado_lista.html', resultado_lista=resultado_lista)
+            return render_template('resultado_lista.html', resultado=resultado)
 
     return render_template('index.html')
 
