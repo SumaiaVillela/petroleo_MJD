@@ -1,0 +1,211 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+
+  img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 100%;
+    height: calc(100vw * 984 / 2659); /* Altura proporcional à largura da página com base na proporção da imagem */
+    background-image: url("../img/1.png");
+    background-size: cover; /* Ajuste para cobrir toda a largura da página */
+    background-position: center;
+    background-repeat: no-repeat; /* Evita a repetição horizontal */
+    position: relative;
+    overflow: hidden; /* Evita que a altura ultrapasse o viewport */
+  }
+
+  .header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Cor do texto do cabeçalho */
+    font-family: 'Intro Rust', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .content {
+    padding: 20px;
+    color: #000;
+  }
+
+  .black-box {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .input-container {
+    margin-bottom: 20px;
+  }
+
+  input[type="file"],
+  input[type="text"],
+  select {
+    width: calc(50%); /* Largura reduzida para caber aproximadamente 30 caracteres */
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  input[type="file"] {
+    background-color: #fff; /* Fundo branco para input de imagem */
+  }
+
+  input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .book-style {
+    font-family: Georgia, serif;
+    margin-left: 40px; /* Recuo estilo citação */
+    font-style: italic;
+    position: relative;
+  }
+
+  .typing-cursor::after {
+    content: "|";
+    animation: blink-caret 0.75s infinite alternate; /* Animação do cursor */
+    position: absolute;
+    bottom: 0;
+    right: -30px; /* Posicionamento do cursor */
+    font-size: 1.5rem; /* Tamanho do cursor */
+  }
+
+  @keyframes blink-caret {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* Estilizando o box dos formulários */
+  .form-box {
+    background-color: rgba(255, 145, 77, 1);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Alinhamento à esquerda */
+  }
+
+  /* Estilizando inputs e botões dentro do box */
+  .input-container input[type="file"],
+  .input-container input[type="text"],
+  .input-container select,
+  .input-container input[type="submit"] {
+    width: 8cm; /* Largura fixa de 8cm para todos os inputs */
+    padding: 10px;
+    border: 2px solid #000; /* Bordas mais arredondadas */
+    border-radius: 20px; /* Borda mais arredondada */
+    display: inline-block;
+    margin-bottom: 10px; /* Espaçamento inferior */
+    margin-top: 5px;
+  }
+
+  /* Estilizando botão "Descobrir" */
+  .input-container input[type="submit"] {
+    width: auto; /* Largura automática baseada no conteúdo */
+    font-weight: bold; /* Palavra em negrito */
+    margin-left: 10px; /* Espaço à esquerda do botão */
+  }
+
+  .box-image {
+  text-align: center; /* Centraliza o conteúdo */
+  position: relative;
+}
+
+.box-image img {
+  max-width: 100%; /* Ajusta a largura da imagem conforme necessário */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+  /* Estilizando texto de explicação */
+  .form-box p.explanation {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #030303;
+  }
+
+  /* Estilizando guia abaixo dos formulários */
+  .form-box .guide {
+    font-style: italic; /* Itálico */
+    font-size: 0.8rem; /* Tamanho menor */
+    color: #eae8e8; /* Cor cinza claro */
+    margin-top: 1px; /* Espaço superior */
+    margin-bottom: 1px;
+  }
+
+footer {
+    background-color: #000;
+    color: #ccc;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  footer a {
+    color: #c15e2e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #90361b;
+  }
+
+  footer strong {
+    font-weight: bold;
+  }
+
+  .footer-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+  .back-link {
+    display: inline-block; /* Para que o link ocupe apenas o espaço necessário */
+    margin-bottom: 10px; /* Margem inferior para separar do conteúdo abaixo */
+    text-decoration: none; /* Remover sublinhado padrão do link */
+    color: #333; /* Cor do texto do link */
+    font-size: 14px; /* Tamanho da fonte */
+  }
+  
+  .back-link:hover {
+    text-decoration: underline; /* Sublinhar o link ao passar o mouse */
+  }
+
+  h2.h2.result {
+    text-transform: uppercase; /* Transforma o texto em caixa alta */
+  }

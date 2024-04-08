@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gota a Gota: usando a IA para prospectar petróleo em produtos</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Box de resultado -->
+        <div class="form-box">
+            <div class="input-container">
+                <a href="/" class="back-link">&#8592; Voltar para a página inicial</a>
+                <h2 hidden>Gota a Gota</h2>
+                <h3 hidden>Onde está o petróleo?</h3>
+            </div>
+
+            <div class="box-image">
+                <img src="static/img/logo_gota_a_gota.png" alt="Gota a Gota: ferramenta de IA que prospecta petróleo em produtos" />
+            </div>
+        
+            <!-- Formulários -->
+            <div class="input-container">        
+            <!-- Resultado gerado dinamicamente -->
+                {% if resultado is mapping %}
+                <h2 class="h2 result">{{ resultado.termo_encontrado }}</h2>
+                    <p>{{ resultado.tem_derivado }}</p><br>
+                    <p>{{ resultado.explicacao }}</p><br><br>
+                {% elif resultado is iterable %}
+                    {% for item in resultado %}
+                    <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
+                        <p>{{ item.tem_derivado }}</p><br>
+                        <p>{{ item.explicacao }}</p><br><br>
+                    {% endfor %}
+                {% else %}
+                    <h2>{{ resultado }}</h2><br><br>
+                {% endif %}
+            <!-- Mensagem de erro -->
+                <p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmaill.com.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Flask
+gunicorn
+requests
+gspread
+oauth2client
+Python-dotenv
