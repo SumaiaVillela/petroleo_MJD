@@ -24,9 +24,11 @@
             <!-- Formulários -->
             <div class="input-container">        
             <!-- Resultado gerado dinamicamente -->
-                <h2 class="h2 result">{{ resultado_lista.termo_encontrado }}</h2>
-                <p>{{ resultado_lista.tem_derivado }}</p><br>
-                <p>{{ resultado_lista.explicacao }}</p><br><br>
+                {% for item in resultado_lista %}
+                    <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
+                        <p>{{ item.tem_derivado }}</p><br>
+                        <p>{{ item.explicacao }}</p><br><br>
+                    {% endfor %}
             <!-- Mensagem de erro -->
                 <br><p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmaill.com.</p>
             </div>

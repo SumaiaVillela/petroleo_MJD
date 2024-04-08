@@ -24,11 +24,7 @@
             <!-- Formulários -->
             <div class="input-container">        
             <!-- Resultado gerado dinamicamente -->
-                {% if resultado is mapping %}
-                <h2 class="h2 result">{{ resultado.termo_encontrado }}</h2>
-                    <p>{{ resultado.tem_derivado }}</p><br>
-                    <p>{{ resultado.explicacao }}</p><br><br>
-                {% elif resultado is iterable %}
+                {% if resultado is iterable %}
                     {% for item in resultado %}
                     <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
                         <p>{{ item.tem_derivado }}</p><br>
