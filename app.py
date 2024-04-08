@@ -62,21 +62,6 @@ def home():
     return render_template('index.html')
 
 
-# Rota para exibir os resultados na página HTML
-@app.route('/resultado_lista')
-def resultado_lista():
-    resultado_lista = request.args.get('resultado_lista')
-
-    return render_template('resultado_lista.html', resultado_lista=resultado_lista)
-
-
-
-# Rota para exibir o resultado
-@app.route('/resultado', methods=['GET'])
-def mostrar_resultado():
-    resultado = request.args.get('resultado')
-    return render_template('resultado.html', resultado=resultado)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
