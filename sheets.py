@@ -60,18 +60,18 @@ def compara_lista(input):
                 })
 
     # Verifica se algum termo da segunda coluna está presente no texto extraído
-    if not termos_presentes:  # Se nenhum termo da coluna 1 foi encontrado, verifique a coluna 2
-        for i, termo in enumerate(termos_coluna2):
-            termo_sem_acentos = unicodedata.normalize('NFKD', termo).encode('ASCII', 'ignore').decode('utf-8')
-            if termo_sem_acentos.lower() in texto_sem_acentos.lower():
+    for i, termo in enumerate(termos_coluna2):
+        termo_sem_acentos = unicodedata.normalize('NFKD', termo).encode('ASCII', 'ignore').decode('utf-8')
+        if termo_sem_acentos.lower() in texto_sem_acentos.lower():
+            # Verifica se o termo da coluna 2 não está presente na coluna 1 (assim, ele não adiciona mais uma vez, porque há termos repetidos em ambas as colunas)
+            if termo not in termos_coluna1:
                 termo_encontrado = termo
                 tem_derivado = termos_coluna3[i]
                 explicacao = termos_coluna4[i]
-                if termo_encontrado:
-                    termos_presentes.append({
-                        'termo_encontrado': termo_encontrado,
-                        'tem_derivado': tem_derivado,
-                        'explicacao': explicacao
-                    })
+                termos_presentes.append({
+                    'termo_encontrado': termo_encontrado,
+                    'tem_derivado': tem_derivado,
+                    'explicacao': explicacao
+                })
 
     return termos_presentes

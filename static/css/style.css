@@ -44,6 +44,7 @@ body {
   .black-box {
     background-color: #000;
     color: #fff;
+    border-radius: 20px;
     padding: 10px;
     margin-bottom: 20px;
   }
@@ -106,7 +107,7 @@ body {
     }
   }
 
-  /* Estilizando o box dos formulários */
+  /* box dos formulários e das respostas */
   .form-box {
     background-color: rgba(255, 145, 77, 1);
     padding: 20px;
@@ -117,18 +118,19 @@ body {
     text-align: left; /* Alinhamento à esquerda */
   }
 
-  /* Estilizando inputs e botões dentro do box */
+  /* Estilo dos inputs e botões dentro do box */
   .input-container input[type="file"],
   .input-container input[type="text"],
   .input-container select,
   .input-container input[type="submit"] {
-    width: 8cm; /* Largura fixa de 8cm para todos os inputs */
+    width: 7cm; /* Largura de todos os inputs */
     padding: 10px;
     border: 2px solid #000; /* Bordas mais arredondadas */
     border-radius: 20px; /* Borda mais arredondada */
     display: inline-block;
     margin-bottom: 10px; /* Espaçamento inferior */
     margin-top: 5px;
+    overflow-x: auto;
   }
 
   /* Estilizando botão "Descobrir" */

@@ -24,14 +24,14 @@
       <p class="book-style">Usa o cartão do vale transporte e segue em pé, com a marmita de plástico balançando na mochila. Gostaria mesmo de comer salmão no self-service japonês, mas precisa do dinheiro para a ração do cachorro.<span class="typing-cursor"></span></p>
 
       <div class="black-box">
-        <p><strong>Cada item de consumo citado nessa narração tem com certeza ou pode conter derivados de petróleo na sua composição ou processo de fabricação.</strong></p>
+        <p><strong>Cada item de consumo citado nessa narração pode conter ou com certeza tem derivados de petróleo na sua composição ou processo de fabricação.</strong></p>
       </div>
                 
-        <p>Sim, até os alimentos. O ouro negro está presente não só nos nossos meios de transporte, mas na nossa higiene, vestuário, moradia, fármacos, alimentação, vaidade, comunicação... a lista é grande.</p>
+        <p>Sim, até os alimentos. O ouro negro está presente não só nos nossos meios de transporte, mas na nossa higiene, vestuário, moradia, fármacos, alimentação, procedimentos de beleza, comunicação... a lista é grande.</p>
 
-        <p> Por isso, quando se fala de reduzir o consumo desse combustível fóssil, "combustível" é só uma parte do problema. É preciso tentar pensar uma sociedade praticamente nova - e isso não é fácil</p>
+        <p> Por isso, quando se fala em reduzir o consumo desse combustível fóssil, o "combustível" é só uma parte do problema. É preciso pensar em uma sociedade praticamente nova - e isso não é fácil.</p>
         
-        <p>Com objetivo educativo e de conscientização, desenvolvemos uma ferramenta, atualmente em fase experimental, para descobrir se há derivados de petróleo no item que você quer pesquisar:</p>
+        <p>Para educar e conscientizar sobre o tema, desenvolvemos uma ferramenta, atualmente em fase experimental, para descobrir se há derivados de petróleo no item que você quer pesquisar:</p>
 
         <div class="form-box">
           <!-- Título e subtítulo -->
@@ -56,9 +56,9 @@
       
           <div class="input-container">
             <p class="explanation">Se preferir, envie a lista de composição ou ingredientes em texto:</p>
-            <p class="guide">Pode copiar a composição de um produto online, buscar uma substância e até nos ajudar a testar por produto (ex.: lente de contato)</p>
+            <p class="guide">Pode copiar a composição de um produto online, buscar uma substância ou até nos ajudar a testar por produto (ex.: celular)</p>
             <form action="/" method="POST">
-              <input type="text" id="texto" name="texto" maxlength="30" placeholder="Digite aqui" required>
+              <input type="text" id="texto" name="texto" maxlength="700" placeholder="Digite aqui" required>
               <input type="submit" value="Descobrir">
             </form>
           </div>
@@ -69,7 +69,7 @@
               <select id="substance" name="substance">
                 <option value="" selected disabled hidden>Escolha aqui</option>
                 <!-- Loop para gerar as opções do dropdown -->
-                {% for termo in termos %}
+                {% for termo in termos | sort %}
                 <option value="{{ termo }}">{{ termo }}</option>
                 {% endfor %}
                 <!-- Fim do loop -->
@@ -83,7 +83,7 @@
 
         <p>Somos “petroleodependentes”? Para o professor de química da Universidade Federal Fluminense (UFF), Thiago de Melo Lima, isso não é um exagero.</p>
         
-        <p>“A molécula da aspirina que a gente toma, o núcleo dela vem a partir de uma molécula que é oriunda do petróleo. A gente usa produtos que são derivados do petróleo desde a hora que a gente acorda até a hora que a gente vai dormir. Então eu acho que é correto fazer essa associação, sim”.</p>
+        <p>“O núcleo da molécula da aspirina vem a partir de uma molécula que é oriunda do petróleo. A gente usa produtos que são derivados do petróleo desde a hora que a gente acorda até a hora que a gente vai dormir. Então eu acho que é correto fazer essa associação, sim”.</p>
         
         <p>Isso porque, quando o produto não deriva de forma mais predominante do petróleo, como a gasolina, o plástico ou o nylon, ele tem derivados presentes por meio de corantes, conservantes, solventes, catalisadores, surfactantes e outras tantas substâncias necessárias em produtos industrializados.</p>
         
@@ -95,11 +95,9 @@
         
         <p>O pimentão, líder no ranking de culturas cultivadas com agrotóxicos, também não escapa. Defensivos agrícolas e fertilizantes possuem petróleo como origem de alguns componentes.</p>
         
-        <div class="infographic">
-            <!-- Aqui vai o seu infográfico embedado -->
-        </div>
-        
-        <p>Mas qual o problema disso? Sem entrar no mérito de possíveis danos à saúde, o fato é que há consequências ambientais para manter o mundo Made From Oil em que vivemos hoje. "O próprio processo de refino gera alguns gases poluentes. Tanto que numa refinaria existem algumas unidades destinadas a não deixar esses gases escaparem nas suas formas mais nocivas", explica o químico Thiago. "E mesmo que hipoteticamente zerássemos o consumo de combustíveis derivados do petróleo, a gente teria o problema da biodegradação desses outros componentes. Os plásticos, por exemplo".</p>        
+        <p>Mas qual o problema disso? Sem entrar no mérito de possíveis danos à saúde, o fato é que há consequências ambientais para manter o mundo Made From Oil em que vivemos hoje.</p>
+          
+        <p>"O próprio processo de refino gera alguns gases poluentes. Tanto que numa refinaria existem algumas unidades destinadas a não deixar esses gases escaparem nas suas formas mais nocivas", explica o químico Thiago. "E mesmo que hipoteticamente zerássemos o consumo de combustíveis derivados do petróleo, a gente teria o problema da biodegradação desses outros componentes. Os plásticos, por exemplo".</p>        
         
     </div>
   </div>
