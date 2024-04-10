@@ -7,10 +7,17 @@ from sheets import autentica_sheets, compara_lista
 from gpt import analisa_imagem, analisa_texto
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from mail import envia_email
 
 
 #Credencial para uso da API do ChatGPT
 ROBO_GPT_TOKEN = os.environ["ROBO_GPT_TOKEN"]
+
+#Credencial para uso da API do Brevo
+EMAIL_TOKEN = os.environ["EMAIL_TOKEN"]
 
 #Credencial para uso da API do Google Sheets
 arquivo_credenciais = "petroleo-em-tudo-9f1b09147a04.json"
@@ -21,6 +28,7 @@ conta = ServiceAccountCredentials.from_json_keyfile_name(arquivo_credenciais)
 
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads/'  # Pasta onde as imagens serão armazenadas localmente
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -39,10 +47,10 @@ def home():
             image_path = "temp_image.jpg"
             image.save(image_path)
 
-            resultado = analisa_imagem(image_path)
+            resultado,input = analisa_imagem(image_path)
 
             if isinstance(resultado, list):
-                 return render_template('resultado_lista.html', resultado = resultado)
+                 return render_template('resultado_lista.html', resultado = resultado, input=input)
             elif isinstance(resultado, str):
                 return render_template('resultado.html', resultado = resultado)
             
@@ -53,20 +61,34 @@ def home():
             resultado = analisa_texto(input)
 
             if isinstance(resultado, list):
-                 return render_template('resultado_lista.html', resultado = resultado)
+                 return render_template('resultado_lista.html', resultado = resultado, input=input)
             elif isinstance(resultado, str):
-                return render_template('resultado.html', resultado = resultado)
+                return render_template('resultado.html', resultado = resultado, input=input)
         
         elif 'substance' in request.form:
             # Se o formulário submetido for o dropdown
-            termo_selecionado = request.form['substance']
+            input = request.form['substance']
 
-            resultado = compara_lista(termo_selecionado)
+            resultado = compara_lista(input)
 
-            return render_template('resultado_lista.html', resultado=resultado)
+            return render_template('resultado_lista.html', input=input, resultado=resultado)
 
     return render_template('index.html')
 
+
+@app.route('/sobre', methods=['GET'])
+def sobre():
+    return render_template('sobre.html')
+
+
+@app.route('/enviar-email-erro', methods=['POST'])
+def enviar_email():
+    input = request.args.get('input')
+    resultado = request.args.get('resultado')
+
+    envia_email(input, resultado)
+
+    return 'E-mail enviado com sucesso!'
 
 
 if __name__ == '__main__':

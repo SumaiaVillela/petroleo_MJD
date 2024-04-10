@@ -1,4 +1,23 @@
 
+.menu {
+  text-align: right;
+  background-color: rgb(0, 0, 0);
+  padding-right: 20px
+}
+
+.menu a {
+  color: #c4c1c1;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: rgba(255, 145, 77, 1);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,12 +35,18 @@ body {
   .header {
     width: 100%;
     height: calc(100vw * 984 / 2659); /* Altura proporcional à largura da página com base na proporção da imagem */
-    background-image: url("../img/1.png");
+    background-image: url("../img/capa.png");
     background-size: cover; /* Ajuste para cobrir toda a largura da página */
     background-position: center;
     background-repeat: no-repeat; /* Evita a repetição horizontal */
     position: relative;
     overflow: hidden; /* Evita que a altura ultrapasse o viewport */
+  }
+
+  @media only screen and (max-width: 768px) {
+    .header {
+      background-image: url("../img/capa_mobile.png"); /* Define a imagem de background para dispositivos móveis */
+    }
   }
 
   .header h1 {
@@ -210,4 +235,9 @@ footer {
 
   h2.h2.result {
     text-transform: uppercase; /* Transforma o texto em caixa alta */
+  }
+
+
+  #formContainer {
+    display: none; /* Formulário inicialmente oculto */
   }

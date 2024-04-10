@@ -20,9 +20,9 @@
             <div class="box-image">
                 <img src="static/img/logo_gota_a_gota.png" alt="Gota a Gota: ferramenta de IA que prospecta petróleo em produtos" />
             </div>
-        
-            <!-- Formulários -->
             <div class="input-container">        
+                <h3>Você pesquisou:</h3>
+                <p>{{ input}} </p><br>
             <!-- Resultado gerado dinamicamente -->
                 {% for item in resultado %}
                     <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
@@ -30,7 +30,7 @@
                         <p>{{ item.explicacao }}</p><br><br>
                 {% endfor %}
             <!-- Mensagem de erro -->
-                <br><p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmaill.com.</p>
+                <br><p class="guide">Encontrou algum erro na resposta? <a href="/enviar-email-erro?input={{ input }}&resultado={{ resultado }}">Envie o resultado para mim</a></p>
             </div>
         </div>
     </div>
