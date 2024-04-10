@@ -47,7 +47,7 @@ with open(image_path, "rb") as image_file:
 ```
 
 
-Após envio de diferentes qualidade de imagem (nitidez, enquadramento, iluminação) e de diferentes fontes (de rótulos a símbolos do tipo de plástico em embalagens), foram fornecidas instruções ao usuário, no site, para que a foto/print resulte em maior chance de retorno, e foi delimitado o escopo de rótulos e etiquetas de roupa.
+Após envio de diferentes qualidades de imagem (nitidez, enquadramento, iluminação) e de diferentes fontes (de rótulos a símbolos do tipo de plástico em embalagens), foram fornecidas instruções ao usuário, no site, para que a foto/print resulte em maior chance de retorno, e foi delimitado o escopo de rótulos e etiquetas de roupa.
 
 Há também a possibilidade de envio de texto direto na ferramenta, cujos procedimentos de análise são os mesmos do conteúdo que foi extraído da imagem.
 
@@ -109,9 +109,9 @@ Um texto traz a apresentação do problema - a dimensão da presença do petról
 ### Monitoramento
 Como já citado, o projeto contou com a observação voluntária do professor do Departamento de Química Inorgânica da Universidade Federal Fluminense (UFF), [Thiago de Melo Lima](http://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=D33923E61978548D3A75BDE03999A811.buscatextual_0). A escolha se deu pela pesquisa que desenvolve: [desenvolve fontes de energia alternativas ao petróleo](https://www.uff.br/?q=noticias/06-06-2023/pesquisa-da-uff-desenvolve-fontes-de-energia-alternativas-ao-petroleo), utilizando plantas que são um "problema" em grandes centros urbanos.
 
-Primeiro, discutimos quais os parâmetros mais seguros para o prompt do ChaGPT, dada a necessidade de não usar respostas absolutas (muitas substâncias, por exemplo, possuem versão orgânica e sintética) e tornar a resposta de IA mais precisa.
+Primeiro, discutimos quais os parâmetros mais seguros para o prompt do ChatGPT, dada a necessidade de não usar respostas absolutas (muitas substâncias, por exemplo, possuem versão orgânica e sintética) e tornar a resposta de IA mais precisa.
 
-Depois, outra planilha eletrônica foi adicionada ao processo. Desta vez, para armazenar as respostas dadas pelo GPT após o envio de input de texto (oriundo de imagem ou não) para o modelo. Assim, era possível verificar como a IA estava reagindo a diferentes prompts. Ambos reviamos esse conteúdo para aperfeiçoamento da ferramenta.
+Depois, outra planilha eletrônica foi adicionada ao processo. Desta vez, para armazenar as respostas dadas pelo GPT após o envio de input de texto (oriundo de imagem ou não) para o modelo. Assim, era possível verificar como a IA estava reagindo a diferentes prompts. Ambos revisamos esse conteúdo para aperfeiçoamento da ferramenta.
 
 O professor também revisou a lista de substâncias adotadas como verificador primário. E iniciamos uma discussão sobre métodos automatizados de adição de novas substâncias, mas esta etapa foi deixada para uma nova entrega, em função do tempo.
 
