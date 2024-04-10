@@ -7,10 +7,6 @@ from sheets import autentica_sheets, compara_lista
 from gpt import analisa_imagem, analisa_texto
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from mail import envia_email
 
 
 #Credencial para uso da API do ChatGPT
