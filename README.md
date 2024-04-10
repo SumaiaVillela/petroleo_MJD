@@ -10,7 +10,7 @@ Um protótipo de buscador de substâncias de petróleo em produtos foi criado co
 
 A aplicação foi criada como trabalho final da primeira metade o Marter em Jornalismo de Dados, Automação e Data Storytelling do Insper.
 
-Usei `Python`, `Flask`, `HTML`, `CSS`, `Google Sheets` e o `ChatGPT` (para imagem e texto) para desenvolver o projeto.
+Usei `Python`, `Flask`, `HTML`, `CSS`, `Google Sheets` e o `ChatGPT` (para imagem e texto) para desenvolver o projeto. **A plataforma escolhida pata interação foi um site. Acesse [aqui](https://petroleoemtudo.onrender.com/).**
 
 > [!IMPORTANT]
 > Apesar de ter contado com a ajuda de um PhD em química para acompanhar a precisão das informações fornecidas pela ferramenta nesta primeira fase de desenvolvimento, como detalho mais abaixo, 
