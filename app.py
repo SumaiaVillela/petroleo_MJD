@@ -12,9 +12,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 #Credencial para uso da API do ChatGPT
 ROBO_GPT_TOKEN = os.environ["ROBO_GPT_TOKEN"]
 
-#Credencial para uso da API do Brevo
-EMAIL_TOKEN = os.environ["EMAIL_TOKEN"]
-
 #Credencial para uso da API do Google Sheets
 arquivo_credenciais = "petroleo-em-tudo-9f1b09147a04.json"
 conteudo_credenciais = os.environ["GSPREAD_CREDENTIALS"]
