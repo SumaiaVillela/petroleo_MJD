@@ -80,16 +80,5 @@ def home():
 def sobre():
     return render_template('sobre.html')
 
-
-@app.route('/enviar-email-erro', methods=['POST'])
-def enviar_email():
-    input = request.args.get('input')
-    resultado = request.args.get('resultado')
-
-    envia_email(input, resultado)
-
-    return 'E-mail enviado com sucesso!'
-
-
 if __name__ == '__main__':
     app.run(debug=True)
