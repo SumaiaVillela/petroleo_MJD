@@ -16,7 +16,7 @@ Usei `Python`, `Flask`, `HTML`, `CSS`, `Google Sheets` e o `ChatGPT` (para image
 > Apesar de ter contado com a ajuda de um PhD em química para acompanhar a precisão das informações fornecidas pela ferramenta nesta primeira fase de desenvolvimento, como detalho mais abaixo, 
 ela não deve ser usada com objetivos científicos.
 
-Cabe ressaltar, no entanto, que há potencial para o desenvolvimento de uma aplicação que utilize informação cientificamente embasada para análise dos inputs extraídos com a ajuda de Inteligência Artificial. Explicamos mais à frente como iniciamos esse processo e qual a forma que usamos para monitorar as respostas dadas via IA.
+Cabe ressaltar, no entanto, que há potencial para o desenvolvimento de uma aplicação que utilize informação cientificamente embasada para análise dos inputs extraídos com a ajuda de Inteligência Artificial. Explico mais à frente como iniciei esse processo e qual a forma que usei para monitorar as respostas dadas via IA.
 
 ***Se quiser apoiar esse projeto, entre em contato: dadosparasumaia@gmail.com***
 
