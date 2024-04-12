@@ -54,7 +54,7 @@ def home():
             # Processar texto
             texto_extraido = request.form['texto']
 
-            resultado = analisa_texto(input)
+            resultado = analisa_texto(texto_extraido)
 
             if isinstance(resultado, list):
                  return render_template('resultado_lista.html', texto_extraido=texto_extraido, resposta=resposta)
