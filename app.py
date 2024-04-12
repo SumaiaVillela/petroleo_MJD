@@ -54,11 +54,11 @@ def home():
             # Processar texto
             texto_extraido = request.form['texto']
 
-            resultado = analisa_texto(texto_extraido)
+            resposta = analisa_texto(texto_extraido)
 
-            if isinstance(resultado, list):
+            if isinstance(resposta, list):
                  return render_template('resultado_lista.html', texto_extraido=texto_extraido, resposta=resposta)
-            elif isinstance(resultado, str):
+            elif isinstance(resposta, str):
                 return render_template('resultado.html', texto_extraido=texto_extraido, resposta=resposta)
         
         elif 'substance' in request.form:
