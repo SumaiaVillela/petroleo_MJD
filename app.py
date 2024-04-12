@@ -42,10 +42,13 @@ def home():
 
             resultado = analisa_imagem(image_path)
 
-            if isinstance(resultado, list):
-                 return render_template('resultado_lista.html', resultado = resultado, input=input)
-            elif isinstance(resultado, dict):
-                return render_template('resultado_dicio.html', resultado = resultado)
+            resposta = resultado.get("resposta")
+            texto_extraido = resultado.get("texto_extraido")
+
+            if isinstance(resposta, list):
+                 return render_template('resultado_lista.html', resposta = resposta, texto_extraido=texto_extraido)
+            elif isinstance(resposta, str):
+                return render_template('resultado.html', resposta = resposta, texto_extraido=texto_extraido)
             
         elif 'texto' in request.form:
             # Processar texto
