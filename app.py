@@ -52,7 +52,7 @@ def home():
             
         elif 'texto' in request.form:
             # Processar texto
-            input = request.form['texto']
+            texto_extraido = request.form['texto']
 
             resultado = analisa_texto(input)
 
