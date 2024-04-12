@@ -57,9 +57,9 @@ def home():
             resultado = analisa_texto(input)
 
             if isinstance(resultado, list):
-                 return render_template('resultado_lista.html', input=texto_extraido, resposta=resposta)
+                 return render_template('resultado_lista.html', texto_extraido=texto_extraido, resposta=resposta)
             elif isinstance(resultado, str):
-                return render_template('resultado.html', input=texto_extraido, resposta=resposta)
+                return render_template('resultado.html', texto_extraido=texto_extraido, resposta=resposta)
         
         elif 'substance' in request.form:
             # Se o formulário submetido for o dropdown
