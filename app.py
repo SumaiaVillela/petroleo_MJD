@@ -56,18 +56,21 @@ def home():
 
             resultado = analisa_texto(input)
 
+            resposta = resultado.get("resposta")
+            texto_extraido = resultado.get("texto_extraido")
+
             if isinstance(resultado, list):
-                 return render_template('resultado_lista.html', resultado = resultado, input=input)
+                 return render_template('resultado_lista.html', texto_extraido=texto_extraido, resposta=resposta)
             elif isinstance(resultado, str):
-                return render_template('resultado.html', resultado = resultado, input=input)
+                return render_template('resultado.html', texto_extraido=texto_extraido, resposta=resposta)
         
         elif 'substance' in request.form:
             # Se o formulário submetido for o dropdown
             input = request.form['substance']
 
-            resultado = compara_lista(input)
+            resposta = compara_lista(input)
 
-            return render_template('resultado_lista.html', input=input, resultado=resultado)
+            return render_template('resultado_lista.html', resposta=resposta)
 
     return render_template('index.html')
 
