@@ -20,7 +20,7 @@ def analisa_texto(input):
     resposta = termos_presentes
 
   elif not termos_presentes:
-    prompt = "Analise se o termo ou a lista de termos enviada tem derivados de petróleo. Caso exista alguma substância geralmente derivada de petróleo, indique, de forma objetiva, qual é ou quais são e em que produtos normalmente é usada ou são usadas. Caso não tenha, informe que não foi possível encontrar dentro do limite dos seus conhecimentos (e não acrescente nada mais sobre que produtos ou substâncias podem ser derivadas do petróleo). O retorno deste prompt precisa ter no máximo 300 tokens."
+    prompt = "Analise se o termo ou a lista de termos enviada tem derivados de petróleo. Caso exista alguma substância geralmente derivada de petróleo, indique, de forma objetiva, qual é ou quais são e em que produtos normalmente é usada ou são usadas. Caso não tenha, informe que não foi possível encontrar dentro do limite dos seus conhecimentos (e não acrescente nada mais sobre que produtos ou substâncias podem ser derivadas do petróleo). Se o input for uma mensagem dizendo que não foi possível extrair texto da imagem ou que não há substâncias na imagem, diga literalmente que não foi possível fazer a análise com base no que foi extraído da imagem. O retorno deste prompt precisa ter no máximo 300 tokens."
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {ROBO_GPT_TOKEN}"
@@ -96,4 +96,6 @@ def analisa_imagem(image_path):
 
   resposta = analisa_texto(texto_extraido)
 
-  return resposta, texto_extraido
+  resultado = {"texto_extraido": texto_extraido, "resposta": resposta}
+
+  return resultado

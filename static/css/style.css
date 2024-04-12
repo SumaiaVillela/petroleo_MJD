@@ -45,7 +45,7 @@ body {
 
   @media only screen and (max-width: 768px) {
     .header {
-      background-image: url("../img/capa_mobile.png"); /* Define a imagem de background para dispositivos móveis */
+      background-image: url("../img/capa_mobile.png");
     }
   }
 
@@ -54,7 +54,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff; /* Cor do texto do cabeçalho */
+    color: #fff;
     font-family: 'Intro Rust', sans-serif;
     font-size: 3rem;
     text-align: center;
@@ -95,7 +95,7 @@ body {
   }
 
   input[type="file"] {
-    background-color: #fff; /* Fundo branco para input de imagem */
+    background-color: #fff;
   }
 
   input[type="submit"] {
@@ -109,7 +109,7 @@ body {
 
   .book-style {
     font-family: Georgia, serif;
-    margin-left: 40px; /* Recuo estilo citação */
+    margin-left: 40px;
     font-style: italic;
     position: relative;
   }
@@ -117,9 +117,8 @@ body {
   .typing-cursor::after {
     content: "|";
     animation: blink-caret 0.75s infinite alternate; /* Animação do cursor */
-    position: absolute;
+    position: static;
     bottom: 0;
-    right: -30px; /* Posicionamento do cursor */
     font-size: 1.5rem; /* Tamanho do cursor */
   }
 
@@ -148,96 +147,88 @@ body {
   .input-container input[type="text"],
   .input-container select,
   .input-container input[type="submit"] {
-    width: 7cm; /* Largura de todos os inputs */
+    width: 7cm;
     padding: 10px;
-    border: 2px solid #000; /* Bordas mais arredondadas */
-    border-radius: 20px; /* Borda mais arredondada */
+    border: 2px solid #000;
+    border-radius: 20px;
     display: inline-block;
-    margin-bottom: 10px; /* Espaçamento inferior */
+    margin-bottom: 10px;
     margin-top: 5px;
     overflow-x: auto;
   }
 
   /* Estilizando botão "Descobrir" */
   .input-container input[type="submit"] {
-    width: auto; /* Largura automática baseada no conteúdo */
-    font-weight: bold; /* Palavra em negrito */
-    margin-left: 10px; /* Espaço à esquerda do botão */
+    width: auto;
+    font-weight: bold;
+    margin-left: 10px;
   }
 
   .box-image {
-  text-align: center; /* Centraliza o conteúdo */
+  text-align: center;
   position: relative;
 }
 
 .box-image img {
-  max-width: 100%; /* Ajusta a largura da imagem conforme necessário */
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-  /* Estilizando texto de explicação */
-  .form-box p.explanation {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #030303;
-  }
+.form-box p.explanation {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #030303;
+}
 
-  /* Estilizando guia abaixo dos formulários */
-  .form-box .guide {
-    font-style: italic; /* Itálico */
-    font-size: 0.8rem; /* Tamanho menor */
-    color: #eae8e8; /* Cor cinza claro */
-    margin-top: 1px; /* Espaço superior */
-    margin-bottom: 1px;
-  }
+.form-box .guide {
+  font-style: italic; /* Itálico */
+  font-size: 0.8rem; /* Tamanho menor */
+  color: #eae8e8; /* Cor cinza claro */
+  margin-top: 1px; /* Espaço superior */
+  margin-bottom: 1px;
+}
 
 footer {
-    background-color: #000;
-    color: #ccc;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.8em;
-  }
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+}
 
-  footer a {
-    color: #c15e2e;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+footer a {
+  color: #c15e2e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  footer a:hover {
-    color: #90361b;
-  }
+footer a:hover {
+  color: #90361b;
+}
 
-  footer strong {
-    font-weight: bold;
-  }
+footer strong {
+  font-weight: bold;
+}
 
-  .footer-content {
-    width: 80%;
-    margin: 0 auto;
-  }
+.footer-content {
+  width: 80%;
+  margin: 0 auto;
+}
 
-
-  .back-link {
-    display: inline-block; /* Para que o link ocupe apenas o espaço necessário */
-    margin-bottom: 10px; /* Margem inferior para separar do conteúdo abaixo */
-    text-decoration: none; /* Remover sublinhado padrão do link */
-    color: #333; /* Cor do texto do link */
-    font-size: 14px; /* Tamanho da fonte */
-  }
+.back-link {
+  display: inline-block; /* Para que o link ocupe apenas o espaço necessário */
+  margin-bottom: 10px;
+  text-decoration: none; /* Remover sublinhado padrão do link */
+  color: #333;
+  font-size: 14px;
+}
   
-  .back-link:hover {
-    text-decoration: underline; /* Sublinhar o link ao passar o mouse */
-  }
+.back-link:hover {
+  text-decoration: underline; /* Sublinhar o link ao passar o mouse */
+}
 
-  h2.h2.result {
-    text-transform: uppercase; /* Transforma o texto em caixa alta */
-  }
-
-
-  #formContainer {
-    display: none; /* Formulário inicialmente oculto */
-  }
+h2.h2.result {
+  text-transform: uppercase; /* Transforma o texto em caixa alta */
+}

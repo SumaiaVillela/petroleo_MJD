@@ -40,12 +40,12 @@ def home():
             image_path = "temp_image.jpg"
             image.save(image_path)
 
-            resultado,input = analisa_imagem(image_path)
+            resultado = analisa_imagem(image_path)
 
             if isinstance(resultado, list):
                  return render_template('resultado_lista.html', resultado = resultado, input=input)
-            elif isinstance(resultado, str):
-                return render_template('resultado.html', resultado = resultado)
+            elif isinstance(resultado, dict):
+                return render_template('resultado_dicio.html', resultado = resultado)
             
         elif 'texto' in request.form:
             # Processar texto

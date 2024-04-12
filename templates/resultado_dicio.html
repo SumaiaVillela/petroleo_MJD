@@ -20,15 +20,13 @@
             <div class="box-image">
                 <img src="static/img/logo_gota_a_gota.png" alt="Gota a Gota: ferramenta de IA que prospecta petróleo em produtos" />
             </div>
-            <div class="input-container">        
+        
+            <div class="input-container">
+                
                 <h3>Você pesquisou:</h3>
-                <p>{{ input}} </p><br>
+                <p>{{ resultado['texto_extraido'] }}</p><br>
 
-                {% for item in resultado %}
-                    <h2 class="h2 result">{{ item.termo_encontrado }}</h2>
-                        <p>{{ item.tem_derivado }}</p><br>
-                        <p>{{ item.explicacao }}</p><br><br>
-                {% endfor %}
+                <p>{{ resultado['resposta'] }}</p><br><br>
 
                 <br><p class="guide">Encontrou algum erro na resposta? Escreva para dadosparasumaia@gmail.com</p>
             </div>

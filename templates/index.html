@@ -40,10 +40,10 @@
         <p>Para educar e conscientizar sobre o tema, desenvolvemos uma ferramenta, atualmente em fase experimental, que combina base de dados humanamente construída e Inteligência Artificial para descobrir se há derivados de petróleo no item que você quer pesquisar:</p>
 
         <div class="form-box">
-          <!-- Título e subtítulo -->
+
           <div class="input-container">
             <h2 hidden>Gota a Gota</h2>
-            <h3 hidden>Onde está o petróleo?</p>
+            <h3 hidden>Prospectando petróleo em produtos</p>
           </div>
 
           <div class="box-image">
@@ -53,7 +53,7 @@
           <!-- Formulários -->
           <div class="input-container">
             <p class="explanation">Envie a imagem de um rótulo ou etiqueta de roupa:</p>
-            <p class="guide">A foto ou print precisa ser nítida, de preferência recortada (só os ingredientes). Formatos: JPG, JPEG, PNG</p>
+            <p class="guide">A foto ou print precisa ser nítida e recortada (só os ingredientes/composição). Formatos: JPG, JPEG, PNG</p>
             <form action="/" method="POST" enctype="multipart/form-data">
               <input type="file" id="imagem" name="image" accept="image/*" required>
               <input type="submit" value="Descobrir">
@@ -74,18 +74,20 @@
             <form action="/" method="POST">
               <select id="substance" name="substance">
                 <option value="" selected disabled hidden>Escolha aqui</option>
-                <!-- Loop para gerar as opções do dropdown -->
+
                 {% for termo in termos | sort %}
                 <option value="{{ termo }}">{{ termo }}</option>
                 {% endfor %}
-                <!-- Fim do loop -->
+
               </select>
               <input type="submit" value="Descobrir">
+
+          <p><em>*O robô precisa de um tempo para pensar...pode demorar um minutinho depois que você apertar em "descobrir". Obrigada pela paciência!</em></p>
             </form>
           </div>
         </div>
 
-        <p>Saiba mais sobre o projeto <a href="https://petroleoemtudo.onrender.com/">aqui.</a></p>
+        <p>Saiba mais sobre o projeto <a href="https://petroleoemtudo.onrender.com/sobre">aqui.</a></p>
         
         <h2> We &#x2764; petróleo </h2>
 
@@ -109,11 +111,11 @@
         
     </div>
   </div>
-  <!-- Espaço extra para o footer -->
+
   <div style="clear: both;"></div>
   <footer>
     <div class="footer-content">
-      <p>Este projeto foi desenvolvido como trabalho final de Sumaia Villela para o primeiro módulo do Master em Jornalismo de Dados, Automação e Data Storytelling do Insper. Ele utiliza ferramenta de Inteligência Artificial em fase experimental, combinada com uma lista contendo informações científicas e em construção. | <a href="https://github.com/SumaiaVillela/petroleo_MJD">Acesse o repositório no GitHub</a></p>
+      <p>Este projeto foi desenvolvido como trabalho final de Sumaia Villela para o primeiro módulo do Master em Jornalismo de Dados, Automação e Data Storytelling do Insper. Ele utiliza ferramenta de Inteligência Artificial em fase experimental, combinada com uma lista contendo informações científicas e em construção. | <a target="_blank" href="https://github.com/SumaiaVillela/petroleo_MJD">Acesse o repositório no GitHub</a></p>
       <p><strong>Informe erros, faça sugestões ou apoie esse projeto:</strong> <span style="color: #c15e2e;">dadosparasumaia@gmail.com</span></p>
     </div>
   </footer>

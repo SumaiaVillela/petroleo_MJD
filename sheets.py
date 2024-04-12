@@ -42,7 +42,6 @@ def compara_lista(input):
     # Remove a acentuação do texto extraído
     texto_sem_acentos = unicodedata.normalize('NFKD', input).encode('ASCII', 'ignore').decode('utf-8')
 
-    # Verifica se algum termo das colunas está presente no texto extraído
     termos_presentes = []
     
     # Verifica se algum termo da primeira coluna está presente no texto extraído
