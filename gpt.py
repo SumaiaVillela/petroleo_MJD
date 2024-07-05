@@ -27,7 +27,7 @@ def analisa_texto(input):
     }
 
     payload = {
-        "model": "gpt-4",
+        "model": "gpt-4o",
         "messages": [
             {
                 "role": "user",
@@ -70,7 +70,7 @@ def analisa_imagem(image_path):
   }
 
   payload = {
-    "model": "gpt-4-vision-preview",
+    "model": "gpt-4o",
     "messages": [
       {
         "role": "user",
