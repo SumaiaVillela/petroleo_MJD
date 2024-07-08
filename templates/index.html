@@ -6,119 +6,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A onipresença do petróleo em nossas vidas</title>
   <link rel="stylesheet" href="static/css/style.css">
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-  <div class="menu">
-    {% include 'menu.html' %}
+  <div>
+      {% include 'menu.html' %}
   </div>
 
-  <div class="header">
+  <div id="header" class="header">
     <h1 hidden>TEM PETRÓLEO EM TUDO</h1>
+  </div>
+
+  <div id="insertion-point"></div>
+
+  <div class="cabeçalho-embaixo">
+    <img src="static\img\cabeçalho_body.png" alt="Imagem que complementa a imagem do cabeçalho, formando o título 'Tem Petróleo em Tudo'">
   </div>
 
   <div class="content">
     <div class="container">
-      <p>Imagine o início de uma manhã comum na vida de um trabalhador de escritório que ganha dois salários mínimos:</p>
+      <p>Imagine o início da manhã de um trabalhador médio brasileiro. <strong>Vamos ver se você identifica quais itens possuem derivados do petróleo:</strong> </p>
 
-      <p class="book-style">Levanta da cama e estica os lençóis em um colchão fino. Olha o horário no celular, vai ao banheiro para escovar os dentes. Toma banho com shampoo, condicionador e sabonete. Veste a roupa do trabalho. Passa batom ou loção pós-barba.</p>
+      <div id="story-container" class="book-style"></div>
 
-      <p class="book-style">Pega a caneta e anota que precisa comprar: detergente, margarina e pimentão. Coloca os óculos escuros e segue para o ponto de ônibus. O veículo chacoalha no asfalto esburacado de um bairro do subúrbio.</p>
+      <div id="options-container" class="options"></div>
 
-      <p class="book-style">Usa o cartão do vale transporte e segue em pé, com a marmita de plástico balançando na mochila. Gostaria mesmo de comer salmão no self-service japonês, mas precisa do dinheiro para a ração do cachorro.<span class="typing-cursor"></span></p>
-
-      <div class="black-box">
-        <p><strong>Cada item de consumo citado nessa narração pode conter ou com certeza tem derivados de petróleo na sua composição ou processo de fabricação.</strong></p>
+      <div id="message" class="black-box hidden">
+        <p><strong>Você acertou! Cada item de consumo citado nessa narração pode conter ou com certeza tem derivados de petróleo na sua composição ou processo de fabricação.</strong></p>
+        <br>
       </div>
+
+    <div id="hidden-content" class="hidden-content">
                 
-        <p>Sim, até os alimentos. O ouro negro está presente não só nos nossos meios de transporte, mas na nossa higiene, vestuário, moradia, fármacos, alimentação, procedimentos de beleza, comunicação... a lista é grande.</p>
+        <p>Preciso confessar: não fomos inteiramente honestos.</p>
+        
+        <p><b>Qualquer opção que você selecionasse teria potencial para conter derivados do petróleo.</b> Sim, até os alimentos. Aliás, até os itens que já faziam parte do texto fixo estão nesse grupo.</p>
+        
+        <p>O ouro negro está presente não só nos nossos meios de transporte, mas na nossa higiene, vestuário, moradia, fármacos, alimentação, procedimentos de beleza, comunicação... a lista é grande.</p>
 
         <p> Por isso, quando se fala em reduzir o consumo desse combustível fóssil, o "combustível" é só uma parte do problema. É preciso pensar em uma sociedade praticamente nova - e isso não é fácil.</p>
-        
+          
         <p>Para educar e conscientizar sobre o tema, desenvolvemos uma ferramenta, atualmente em fase experimental, que combina base de dados humanamente construída e Inteligência Artificial para descobrir se há derivados de petróleo no item que você quer pesquisar:</p>
 
-        <div class="form-box">
-
-          <div class="input-container">
-            <h2 hidden>Gota a Gota</h2>
-            <h3 hidden>Prospectando petróleo em produtos</p>
-          </div>
-
-          <div class="box-image">
-            <img src="static/img/logo_gota_a_gota.png" alt="Gota a Gota: ferramenta de IA que prospecta petróleo em produtos" />
-          </div>
-      
-          <!-- Formulários -->
-          <div class="input-container">
-            <p class="explanation">Envie a imagem de um rótulo ou etiqueta de roupa:</p>
-            <p class="guide">A foto ou print precisa ser nítida e recortada (só os ingredientes/composição). Formatos: JPG, JPEG, PNG</p>
-            <form action="/" method="POST" enctype="multipart/form-data">
-              <input type="file" id="imagem" name="image" accept="image/*" required>
-              <input type="submit" value="Descobrir">
-            </form>
-          </div>
-      
-          <div class="input-container">
-            <p class="explanation">Se preferir, envie a lista de composição ou ingredientes em texto:</p>
-            <p class="guide">Pode copiar a composição de um produto online, buscar uma substância ou até nos ajudar a testar por produto (ex.: celular)</p>
-            <form action="/" method="POST">
-              <input type="text" id="texto" name="texto" maxlength="700" placeholder="Digite aqui" required>
-              <input type="submit" value="Descobrir">
-            </form>
-          </div>
-      
-          <div class="input-container">
-            <p class="explanation">Ou selecione uma substância da lista:</p>
-            <form action="/" method="POST">
-              <select id="substance" name="substance">
-                <option value="" selected disabled hidden>Escolha aqui</option>
-
-                {% for termo in termos | sort %}
-                <option value="{{ termo }}">{{ termo }}</option>
-                {% endfor %}
-
-              </select>
-              <input type="submit" value="Descobrir">
-
-          <p><em>*O robô precisa de um tempo para pensar...pode demorar um minutinho depois que você apertar em "descobrir". Obrigada pela paciência!</em></p>
-            </form>
-          </div>
+        <div style="--aspect-ratio: 3/2;">
+          <iframe 
+            src="https://gotagota.onrender.com/"
+            frameborder="0"
+          >
+          </iframe>
         </div>
 
-        <p>Saiba mais sobre o projeto <a href="https://petroleoemtudo.onrender.com/sobre">aqui.</a></p>
-        
-        <h2> We &#x2764; petróleo </h2>
-
-        <p>Somos “petroleodependentes”? Para o professor de química da Universidade Federal Fluminense (UFF), Thiago de Melo Lima, isso não é um exagero.</p>
-        
-        <p>“O núcleo da molécula da aspirina vem a partir de uma molécula que é oriunda do petróleo. A gente usa produtos que são derivados do petróleo desde a hora que a gente acorda até a hora que a gente vai dormir. Então eu acho que é correto fazer essa associação, sim”.</p>
-        
-        <p>Isso porque, quando o produto não deriva de forma mais predominante do petróleo, como a gasolina, o plástico ou o nylon, ele tem derivados presentes por meio de corantes, conservantes, solventes, catalisadores, surfactantes e outras tantas substâncias necessárias em produtos industrializados.</p>
-        
-        <img src="static/img/infografico_petroleo.png" alt="Infográfico mostra uma variedade de itens e cadeias de produção onde são empregados derivados do petróleo">
-
-        <p>Rações de diversas marcas possuem BHT, por exemplo, um antioxidante que, quando sintético, tem origem no petróleo. Muitos batons contam com vaselina. Até medicamentos homeopáticos entram na lista, quando contêm benzeno.</p>
-        
-        <p>E ainda que não tenham nada disso na composição, suas cadeias de produção não conseguem fugir dessa realidade. O salmão que consumimos, por exemplo, é quase que exclusivamente de cativeiro. E a ração que alimenta o peixe e lhe dá a característica coloração é derivada de petróleo.</p>
-        
-        <p>O pimentão, líder no ranking de culturas cultivadas com agrotóxicos, também não escapa. Defensivos agrícolas e fertilizantes possuem petróleo como origem de alguns componentes.</p>
-        
-        <p>Mas qual o problema disso? Sem entrar no mérito de possíveis danos à saúde, o fato é que há consequências ambientais para manter o mundo Made From Oil em que vivemos hoje.</p>
+          <p>Acesse a ferramenta <a href="https://gotagota.onrender.com/">aqui.</a></p>
           
-        <p>"O próprio processo de refino gera alguns gases poluentes. Tanto que numa refinaria existem algumas unidades destinadas a não deixar esses gases escaparem nas suas formas mais nocivas", explica o químico Thiago. "E mesmo que hipoteticamente zerássemos o consumo de combustíveis derivados do petróleo, a gente teria o problema da biodegradação desses outros componentes. Os plásticos, por exemplo".</p>        
-        
+          <h2> We &#x2764; petróleo </h2>
+
+          <p>Somos “petroleodependentes”? Para o professor de química da Universidade Federal Fluminense (UFF), Thiago de Melo Lima, isso não é um exagero.</p>
+          
+          <p>“O núcleo da molécula da aspirina vem a partir de uma molécula que é oriunda do petróleo. A gente usa produtos que são derivados do petróleo desde a hora que a gente acorda até a hora que a gente vai dormir. Então eu acho que é correto fazer essa associação, sim”.</p>
+          
+          <p>Isso porque, quando o produto não deriva de forma mais predominante do petróleo, como a gasolina, o plástico ou o nylon, ele tem derivados presentes por meio de corantes, conservantes, solventes, catalisadores, surfactantes e outras tantas substâncias necessárias em produtos industrializados.</p>
+          
+      <div class="infografico">      
+            <img src="static/img/infografico_petroleo.png" alt="Infográfico mostra uma variedade de itens e cadeias de produção onde são empregados derivados do petróleo">
+      </div>
+      <div class="content">
+        <div class="container">
+            <p>Rações de diversas marcas possuem BHT, por exemplo, um antioxidante que, quando sintético, tem origem no petróleo. Muitos batons contam com vaselina. Até medicamentos homeopáticos entram na lista, quando contêm benzeno.</p>
+              
+            <p>E ainda que não tenham nada disso na composição, suas cadeias de produção não conseguem fugir dessa realidade. O salmão que consumimos, por exemplo, é quase que exclusivamente de cativeiro. E a ração que alimenta o peixe e lhe dá a característica coloração é derivada de petróleo.</p>
+              
+            <p>O pimentão, líder no ranking de culturas cultivadas com agrotóxicos, também não escapa. Defensivos agrícolas e fertilizantes possuem petróleo como origem de alguns componentes.</p>
+              
+            <p>Mas qual o problema disso? Sem entrar no mérito de possíveis danos à saúde, o fato é que há consequências ambientais para manter o mundo Made From Oil em que vivemos hoje.</p>
+                
+            <p>"O próprio processo de refino gera alguns gases poluentes. Tanto que numa refinaria existem algumas unidades destinadas a não deixar esses gases escaparem nas suas formas mais nocivas", explica o químico Thiago. "E mesmo que hipoteticamente zerássemos o consumo de combustíveis derivados do petróleo, a gente teria o problema da biodegradação desses outros componentes. Os plásticos, por exemplo".</p>        
+              
+        </div>
+      </div>
     </div>
   </div>
-
-  <div style="clear: both;"></div>
-  <footer>
+  <footer id="hidden-content" class="hidden-content">
     <div class="footer-content">
       <p>Este projeto foi desenvolvido como trabalho final de Sumaia Villela para o primeiro módulo do Master em Jornalismo de Dados, Automação e Data Storytelling do Insper. Ele utiliza ferramenta de Inteligência Artificial em fase experimental, combinada com uma lista contendo informações científicas e em construção. | <a target="_blank" href="https://github.com/SumaiaVillela/petroleo_MJD">Acesse o repositório no GitHub</a></p>
       <p><strong>Informe erros, faça sugestões ou apoie esse projeto:</strong> <span style="color: #c15e2e;">dadosparasumaia@gmail.com</span></p>
     </div>
+
+    <a class="volta-topo" href="javascript:void(0);" style="display: none;">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
   </footer>
+
+<script src="static/js/script.js"></script>
+
 </body>
 
 </html>
