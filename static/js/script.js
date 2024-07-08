@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   headerHeight = 556;
   const headerImage = document.querySelector('.cabeçalho-embaixo img');
 
+  // Define a altura do cabeçalho só quando a imagem é carregada
   headerImage.addEventListener('load', function() {
     const headerHeight = headerImage.offsetHeight;
     const fixedPoint = headerHeight / 1.5;
 
+    // Define um ponto em que a imagem será fixada a partir da rolagem da tela
     window.addEventListener('scroll', function() {
       if (window.scrollY >= fixedPoint) {
         header.classList.add('fixed-partial');
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const conteudoToggle = document.querySelector('.conteudo-toggle');
   const menuPrincipal = document.querySelector('.menu-principal');
 
-  // Function to handle the display of menus based on window width
+  // Função para trocar os menus conforme tamanho da tela
   function handleResize() {
     if (window.innerWidth > 700) {
       iconeMenuToggle.style.display = 'none';
@@ -53,18 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Toggle the menu when the icon is clicked
+  // Mostra as opções do menu quando o ícone é clicado
   iconeMenuToggle.addEventListener('click', function() {
     conteudoToggle.classList.toggle('mostrar');
   });
 
-  // Initial check
+  // Verificação inicial ao carregar a página
   handleResize();
 
-  // Listen for window resize events
+  // Observa o redimensionamento da janela
   window.addEventListener('resize', handleResize);
 
   // Joguinho narrativo do começo do material
+
+  // Criação das sentenças e opções para cada lacuna
   const story = [
     {
       text: "Um barulho invade o sonho. A pessoa alcança o/os _______ na mesa de cabeceira e desliga o alarme.",
@@ -117,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let currentStep = 0;
 
+  //Mostra cada sentença com as opções progressivamente, a cada escolha
   function showSentence() {
     if (currentStep < story.length) {
       const sentence = story[currentStep].text;
@@ -133,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         optionsContainer.appendChild(button);
       });
 
-      autoScroll(); // Adicionar a rolagem automática ao mostrar uma nova sentença
+      autoScroll(); // Adiciona rolagem automática ao mostrar uma nova sentença
 
       // Verifica se é a sexta sentença para fixar parcialmente o cabeçalho
       if (currentStep === 5) {
@@ -175,28 +180,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Escolhe a opção e avança para a próxima sentença
   function chooseOption(option, sentenceElement) {
     sentenceElement.querySelector('.lacuna').textContent = option;
     currentStep++;
     showSentence();
   }
 
+  // Rola automaticamente até o final da página
   function autoScroll() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
 
+  // Ativa a rolagem para mostrar o conteúdo conforme o scroll
   function enableScrollToShowContent() {
     window.addEventListener('scroll', handleScroll);
   }
 
+  // Verifica o scroll para revelar todo o conteúdo oculto
   function handleScroll() {
-    // Adicionar um pequeno buffer para a rolagem extra antes de revelar o conteúdo
+    // Adicionar um pequeno buffer antes de revelar o conteúdo
     if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
       revealAllHiddenContent();
       window.removeEventListener('scroll', handleScroll);
     }
   }
 
+  // Revela todo o conteúdo oculto de forma animada, com atraso
   function revealAllHiddenContent() {
     const hiddenElements = document.querySelectorAll('.hidden-content');
     hiddenElements.forEach(element => {
@@ -206,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(() => {
           element.classList.add('show');
         });
-      }, 100); // Atraso de 50ms
+      }, 100);
     });
   }
 
@@ -223,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Retorna ao topo ao clicar no ícone
   document.querySelector('.volta-topo').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
